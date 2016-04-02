@@ -1,14 +1,10 @@
 language: c
+before_install:
+- openssl aes-256-cbc -K $encrypted_8457a03c8f0f_key -iv $encrypted_8457a03c8f0f_iv
+  -in run.sh.enc -out script/run.sh -d
 before_script:
-- echo $USER
-- npm install hexo -g
-- npm install
-- git config --global user.name "pointertan"
-- git config --global user.email "dingfan.pf@gmail.com"
-- sed -i'' "/^ *repo/s~github\.com~${GH_TOKEN}@github.com~" _config.yml
+- chmod +x scripts/run.sh
+- ./scripts/run.sh
 script:
 - hexo generate
 - hexo deploy --silent
-env:
-  global:
-    secure: xVUX7GuEl/PyP8kNAm3Y38PNEYG6miajn7bIcM4sGZF5M3eyUy1S2HfSHBKHVTY0EG70Jij+cCfm/On6AkQufqbt3aetujchSgsQLLHkCOrBISt0GhEA3Szy0RsA0Xh+45jErP8DYLtR7VBIWllTwN+c1Zdeejknnf38QprGLzPIRMC1P4iV3mA/sI3o+OawjafTmORiwlahb0DL167zVoQeVh39KZTCGGub7F60qsVV/mDK3s3XuBPHGBfwTpHJqnRwsS21++cEV39/+bNfqHTlzH0JMLOHOhbQcQEBIR/z9jjHeI8352wod2y7NwOAbZUwm7ODIo0qdNFMjfE+CkHOrD3BuXs10kTuJKDKYoA5jQU5aVZ7/RE0f+NhlJbQ2qBwRPKaE76C6BTgiTweodeh/80xedDmwRLUduklPI2Crwj8oy3mSnV25NVSxL5cwDcpB09N22x3f4ApJHmjs2Ne30I/VOGXbb1L+8IkndPLIF76k9iF0POY3i/syUZKqRKVR8VB78mj6hBHiefYFiyyKn80Z1b0CD+XLFHLDLumFLxXLRHT3K570D1MYw5adIRomVA354l54ZYtUJt+skazsiQmGEIgubWkq9eD8f/bOzcRkGNis+G+807g0Gq7ahI/jKaUtgoTnO2KP++ohqorJUiLJT9NNSkOCM+VzMM=
