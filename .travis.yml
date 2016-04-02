@@ -2,6 +2,8 @@ language: c
 before_script:
 - npm install hexo -g
 - npm install
+- git config --global user.email "dingfan.pf@gmail.com"
+- git config --global user.name "PT"
 script:
 - hexo generate
 - hexo deploy
