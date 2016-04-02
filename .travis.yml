@@ -1,0 +1,9 @@
+language: c
+before_script:
+- npm install hexo -g
+- npm install
+script:
+- hexo generate
+- hexo deploy
+after_success:
+after_script:
