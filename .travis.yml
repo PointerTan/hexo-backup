@@ -2,10 +2,12 @@ language: c
 before_script:
 - npm install hexo -g
 - npm install
+- sed -i 's/git@github.com:/https:\/\/pointertan:$TOKEN@github.com\//' .gitmodules
+- git config --global user.name "pointertan"
 - git config --global user.email "dingfan.pf@gmail.com"
-- git config --global user.name "PT"
 script:
 - hexo generate
 - hexo deploy
-after_success:
-after_script:
+env:
+  global:
+    secure: Q+xxSkgGbzU8+HBcX21b4MBdxjghE2N2+YKmL2/Kyqi+94C6jAPaBoP6yz3eXVGzUclzXR8lK6X0S+XQHqEZiO6fUtpp6ws7HS/jd/GKMqEYWk9yBSZsFyc393KaoRsHb0YjOWMF8jGK7WLnB5l26LCep3S1aJLqaV9pJmlGz/Cm0CH+SUpvl7RZhSePwdZu/uJFRt7CogPwgu8MxbLaETtjTZhVuUteM91slChYmAP0YFe0Bm337sVKWAhQ8QDmF28QI/ze8QJAtEAgoPpcEY7mtM5iQyOmFNloACjCX9YVvM/7aDqV7m21nPHwxnKIGN+FfvIXq8x6NhvDAEUHadZZGX2c/nsdbNgkKW5k7jr4rjxSWDZ0tDk5XfagfaekV4HYN+SfVyJRZD2wzsxKG8HyISW3Qi3w71E/Y4hPqUP3a6u1Gv1ykDzsUt8GLuaUHCoJKM6qqv82Jq1qbQf4gkOa4M6wLZ/uwy6D9uHIX1TGBODrUUzjIDBqfsKJ1xFNQA6bGqlCcb1IpZIlOMKL3+XKVc9Id/ex4hHo4kMkkXiHeLSrccup4gx/FHJaP6fquJC8ZjX4wGcFaWv5wOX0x0cihcZHZQ4aOe8YRasvwcKxTXIOiO2URvD6MrvpP6cZtR+W8CXu4RFfqehA7l9JCZwvCvuCTQ0rBCEGnGjZPnI=
