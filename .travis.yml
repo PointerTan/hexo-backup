@@ -3,6 +3,7 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_8457a03c8f0f_key -iv $encrypted_8457a03c8f0f_iv
   -in run.sh.enc -out script/run.sh -d
 before_script:
+- echo $hahahacode
 - chmod +x script/run.sh
 - ./script/run.sh
 script:
