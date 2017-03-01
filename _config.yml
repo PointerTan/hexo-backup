@@ -78,4 +78,4 @@ backup:
     github: https://github.com/PointerTan/hexo-backup.git,master
 
 #duoshuo
-# duoshuo_shortname: ptduoshuo
+duoshuo_shortname: ptduoshuo
