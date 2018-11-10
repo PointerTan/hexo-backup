@@ -70,6 +70,7 @@ theme: hexo-theme-next-master
 deploy:
   type: git
   repo: https://github.com/PointerTan/pointertan.github.io
+  repo: https://gh_token@github.com/PointerTan/pointertan.github.io.git
 
 backup:
   type: git
@@ -78,4 +79,4 @@ backup:
     github: https://github.com/PointerTan/hexo-backup.git,master
 
 #duoshuo
-duoshuo_shortname: ptduoshuo
+# duoshuo_shortname: ptduoshuo
