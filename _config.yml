@@ -70,7 +70,6 @@ theme: hexo-theme-next-master
 deploy:
   type: git
   repo: https://github.com/PointerTan/pointertan.github.io
-  repo: https://gh_token@github.com/PointerTan/pointertan.github.io.git
 
 backup:
   type: git
