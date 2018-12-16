@@ -25,7 +25,7 @@ assert(resultA == resultB, "two results should equal")
 
 #### 2、根据测试用例编写第一个版本的代码
 第一个可能觉得生涩的地方，是闭包作为参数传入。
-[关于闭包的语法介绍](http://fuckingswiftblocksyntax.com)
+[关于闭包的语法介绍](http://fuckingclosuresyntax.com)
 
 其实可以认为闭包是一个匿名函数（虽然实际上在swift中Functions are a special case of closures）
 然后本身作为高阶函数，map就是接收一个处理函数。
