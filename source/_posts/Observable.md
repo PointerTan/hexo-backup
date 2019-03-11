@@ -2,11 +2,11 @@ title: 实现 Rxjs 中的 Observable
 date: 2019-03-11 15:27:00
 tags: JS
 ---
-平时工作中很多地方用到了Rxjs，最基础的用法是使用Observable.create方法创建一个可订阅的对象，然后使用subscribe和unsubscribe，进行订阅和取消订阅的操作，通知到订阅者observer。对这个用法，我简单地实现了一个自己的版本。
+平时工作中很多地方用到了Rxjs，最基础的用法是使用Observable.create方法创建一个可订阅的对象，然后使用subscribe和unsubscribe，进行订阅和取消订阅的操作，通知到订阅者observer。对这个用法，我简单地实现了一个自己的版本。
 
 <!--more-->
 
-### 1、Rxjs的简单用法。
+### 1、Rxjs的简单用法。
 ```js
 const Rx = require('rxjs')
 
@@ -50,7 +50,7 @@ const myObservable = (_ => {
 })()
 ```
 
-利用了闭包的特性来实现，这样我们就可以使用类似Rxjs的方式来调用这段代码：
+利用了闭包的特性来实现，这样我们就可以使用类似Rxjs的方式来调用这段代码：
 ```js
 const myPrinter = myObservable.create(observer => {
     let count = 0
@@ -99,7 +99,7 @@ const myObservable = (_ => {
     return { create }
 })()
 ```
-增加了一个 startSub 的变量，在 unsubscribe 之后， startSub 为false。 同时在调用 observer 的 next 前，增加对 startSub 的判断。
+增加了一个 startSub 的变量，在 unsubscribe 之后， startSub 为false。 同时在调用 observer 的 next 前，增加对 startSub 的判断。
 
 使用方式：
 
@@ -121,7 +121,7 @@ something-2
 ```
 
 ### 4、代码实现V3
-增加异常处理：
+增加异常处理：
 
 ```js
 const myObservable = (_ => {
@@ -156,9 +156,9 @@ myPrinter.subscribe({
 })
 ```
 
-这个时候，如果 create 的方法执行中遇到错误抛出，就可以从观察者这里得到错误信息
+这个时候，如果 create 的方法执行中遇到错误抛出，就可以从观察者这里得到错误信息
 
-比如 create 时抛出一个异常。
+比如 create 时抛出一个异常。
 ```js
 const myPrinter = myObservable.create(o => {
     throw new Error('外部方法出现错误')
@@ -175,4 +175,4 @@ print error Error: 外部方法出现错误
 ```
 
 ### 5、TODO
-上面只是一个对 Rxjs Observable 的一个简单实现，而实际上这个框架有太多其他复杂的机制，observable 的实现远比这个复杂。
+上面只是一个对 Rxjs Observable 的一个简单实现，而实际上这个框架有太多其他复杂的机制，observable 的实现远比这个复杂。
