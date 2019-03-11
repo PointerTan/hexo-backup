@@ -2,7 +2,7 @@ title: 实现 Rxjs 中的 Observable
 date: 2019-03-11 15:27:00
 tags: JS
 ---
-平时工作中很多地方用到了Rxjs，最基础的用法是使用Observable.create方法创建一个可订阅的对象，然后使用subscribe和unsubscribe，进行订阅和取消订阅的操作，通知到订阅者observer。对这个用法，我简单地实现了一个自己的版本。
+平时工作中很多地方用到了Rxjs，最基础的用法是使用Observable.create方法创建一个可订阅的对象，然后使用subscribe和unsubscribe，进行订阅和取消订阅的操作，通知到观察者observer。对这个用法，我简单地实现了一个自己的版本。
 
 <!--more-->
 
